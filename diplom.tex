@@ -1,0 +1,85 @@
+\documentclass[
+	pdftex,%              PDFTex verwenden
+	a4paper,%             A4 Papier
+	oneside,%             Einseitig
+	bibtotoc,%    		Literaturverzeichnis einf�gen bibtotocnumbered: nummeriert
+	liststotoc,%		Verzeichnisse einbinden in toc
+	idxtotoc,%            Index ins Verzeichnis einf�gen
+	halfparskip,%        Europ�ischer Satz mit abstand zwischen Abs�tzen
+	chapterprefix,%       Kapitel anschreiben als Kapitel
+	headsepline,%         Linie nach Kopfzeile
+	%footsepline,%         Linie vor Fusszeile
+	%pointlessnumbers,%     Nummern ohne abschlie�enden Punkt
+	11pt%                 Gr�ssere Schrift, besser lesbar am bildschrim
+]{scrbook}
+
+% Header mit Deklarationen
+\input{extras/header}
+
+\begin{document}
+% Hintergrundbild fuer Titelseite einfuegen
+% nur bei Titelseite von HTL-Shkoder einkommentieren
+% nicht bei Titleseitesimpel
+%\AddToShipoutPicture*{\BackgroundPic}
+
+% Roemische Nummerierung fuer Sonderseiten, wie Kurzfassung, Abstract, Verzeichnisse und Anhang
+\pagenumbering{Roman}
+
+% Titelblatt HTL-Shkoder
+\input{extras/titelseitesimpel}
+% einfaches Titelblatt
+%\input{extras/titelseitesimpel}
+
+% Eidesstattliche Erklaerung
+\input{extras/eidesstattliche}
+
+% Kurzfassung
+\input{extras/kurzfassung}
+
+% Abstract
+\input{extras/abstract}
+
+% Danksagung
+\input{extras/danksagung}
+
+% Verzeichnisse
+% Kopfzeile links Kapitel, rechts leer
+\ihead{\leftmark}
+\ohead{}
+
+% Inhaltsverzeichnis, Abbildungsverzeichnis, Tabellenverzeichnis
+\input{extras/verzeichnisse}
+
+% Merke mir die roemische Seitenzahl in 'roemisch' und setzte Nummerierung 
+% auf arabisch fuer die eigentlichen Kapitel
+\newpage
+\newcounter{roemisch}
+\setcounter{roemisch}{\value{page}}
+\pagenumbering{arabic}
+
+% Die einzelnen Kapitel
+% Kopfzeile: links Kapitel, rechts Sektion
+%\ihead{\leftmark}
+%\ohead{\rightmark}
+%\ihead{\parbox[t][2\baselineskip][t]{\dimexpr\linewidth-2em\relax}{\leftmark}}
+%\ohead{\parbox[t][2\baselineskip][t]{20em}{\raggedleft\rightmark}}
+\input{kapitel/kapitel1}
+\input{kapitel/kapitel2}
+\input{kapitel/kapitel3}
+\input{kapitel/kapitel4}
+
+% Setze Numerierung wieder auf roemisch zuruek und setzte von oben fort
+% Wert ist demnach der von 'roemisch'
+\newpage
+\pagenumbering{Roman}
+\setcounter{page}{\value{roemisch}}
+
+% Literaturverzeichnis
+\bibliographystyle{plain}
+\bibliography{literatur/bib}
+
+% Appendix, falls vorhanden
+\appendix
+\input{extras/anhang}
+
+\end{document}

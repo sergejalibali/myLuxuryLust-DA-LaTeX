@@ -1,0 +1,121 @@
+\chapter{Viertes Kapitel}
+\section{Listen und Aufz\"ahlungen}
+
+Hier mal eine Auflistung von Elementen
+\begin{itemize}
+ \item erstes Element
+ \item zweites Element
+ \item noch ein Element
+\end{itemize}
+
+Hier mal eine Aufz\"ahlung
+\begin{enumerate}
+ \item erster Punkt
+ \item noch ein Punkt
+ \item letzter Punkt
+\end{enumerate}
+
+\section{Und n\"achster Abschnitt etwas l\"anger als vorher es war}
+Eine neue Seite, um auchmal die Kopfzeile zu sehen, da sie auf Seiten mit Kapitelanfang nicht erscheinen. Eine Abk\"urzung ist z.B. etc.\abk{etc.}{et cetera}.
+
+\section{Eine Tabelle}
+
+Hier eine Tabelle:
+\begin{table}[htbp]
+\centering
+\begin{tabular}{l|l|l|l}
+SpalteA & SpalteB & SpalteC & SpalteD \\
+\midrule
+InhaltA1 & InhaltB1 & InhaltC1 & InhaltD1 \\
+InhaltA2 & InhaltB2 & InhaltC2 & InhaltD2 \\
+InhaltA3 & InhaltB3 & InhaltC3 & InhaltD3
+\end{tabular}
+\caption{Beispiel einer Tabelle}
+\label{tab:tabelle1}
+\end{table}
+
+Wie man in der Tabelle~\ref{tab:tabelle1} sehen kann ...
+
+% Neue Seite
+\section{Zitieren und Literaturverzeichnis erzeugen}
+Zitierregeln sind der Word-Version der Diplomarbeitsvorlage zu entnehmen! \\
+In der Datei \textit{bib.bib} im Verzeichnis \textit{Literatur} sind neue Eintr\"age von Literatur hinzuzuf\"ugen. Das Format kann in der \LaTeX{} Dokumentation nachgesehen werden. \\
+N\"utzliche Links zum automatischen Erstellen von BibTeX Eintr\"agen:
+\begin{itemize}
+	\item \url{http://truben.no/latex/bibtex/}
+	\item \url{http://www.ottobib.com}
+	\item \url{http://www.literatur-generator.de}
+	\item \url{https://scholar.google.de}
+\end{itemize}
+
+\begin{center}
+\Large{!!! \\Damit das Literaturverzeichnis erstellt wird, muss auch mit dem \textbf{Befehl BibTeX} kompiliert werden.\\ !!!}
+\end{center}
+
+
+\subsection{Beispiele}
+Die exakte Herleitung kann in \cite{Prager1961} nachgelesen werden. \\
+Hier ein Zitat etwas einger\"uckt:
+\begin{quote}
+Das Programm TeX wurde von Donald E. Knuth, Professor an der Stanford University, entwickelt. Leslie Lamport entwickelte Anfang der 1980er Jahre darauf aufbauend LaTeX, eine Sammlung von TeX-Makros. Der Name ist eine Abk\"urzung f\"ur Lamport TeX \cite{latextug}.
+\end{quote}
+
+\section{Bilder und Referenzen}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{abbildungsdatei}
+\caption{Titel der Abbildung} 
+\label{fig:bild1}
+\end{figure}
+
+In der Abbildung~\ref{fig:bild1}\footnote{vgl. Zitat A\cite{referenzA}} % referenzA muss im Verzeichnis literatur in der Datei bib.bib enthalten sein
+ist zu sehen, dass ...
+
+\section{Formeln}
+\label{sec:formeln}
+
+\subsection{Albert Einstein}
+Keine Formel der modernen Physik ist in der allgemeinen \"Offentlichkeit wohl so bekannt wie die Einsteinsche Formel:
+\begin{equation*}
+  E = mc^2
+\end{equation*}.
+
+\subsection{Allgemeine quadratische Gleichung}
+\begin{equation*}
+  ax^2 + bx + c = 0
+\end{equation*}
+
+\begin{equation*}
+  x_{1/2} = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+\end{equation*}
+
+\subsection{Integral}
+\begin{equation}
+  \label{eq:1}
+  \int\limits_{a}^{b} x^{2} \, dx = \frac{ b^{3} - a^{3} }{3}
+\end{equation}
+Siehe Beispiel \eqref{eq:1} \\
+Siehe Abschnitt \ref{sec:formeln}
+
+\section{Source Code einbinden}
+\subsection{Datei}
+Hier eine Einbindung von Source Code in Form einer Datei (funktioniert mit allen g\"angigen Programmiersprachen):
+\lstinputlisting[label=lst:helloworldjava,caption=Hello World in Java]{./src/HelloWorld.java}
+Die Ausgabe am Bildschirm von Hello World in Java ist in \ref{lst:helloworldjava} zu sehen.
+\subsection{Inline}
+Dieser Source Code ist direkt in \LaTeX{} eingegeben:
+\begin{lstlisting}[caption=Hello World in C, label=lst:helloworldc]
+#include <stdio.h>
+
+/* Block
+ * comment */
+ 
+int main()
+{
+    // Line comment.
+    printf("Hello World\n");
+ 
+    return 0;
+}
+\end{lstlisting}
+Die Ausgabe am Bildschirm von Hello World in Java ist in \ref{lst:helloworldc} zu sehen.
