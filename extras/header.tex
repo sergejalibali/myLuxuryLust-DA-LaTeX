@@ -7,9 +7,10 @@
 % Pakete um Latin1 Zeichnensaetze verwenden zu koennen und die dazu
 % passenden Schriften.
 %
-\usepackage[latin1]{inputenc} % fuer OS X
-% \usepackage[utf8]{inputenc} % fuer Windows
+%\usepackage[latin1]{inputenc} % fuer OS X
+\usepackage[utf8]{inputenc} % fuer Windows
 \usepackage[T1]{fontenc}
+
 
 %
 % Paket fuer Quotes
@@ -21,6 +22,12 @@
 %
 \usepackage{array}
 
+\usepackage{lscape}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+
 %
 % Paket fuer schoenere Tabellen
 %
@@ -30,6 +37,11 @@
 % Paket um Grafiken einbetten zu koennen
 %
 \usepackage{graphicx}
+
+%
+% Paket fuer Links
+%
+\usepackage{hyperref}
 
 %
 % Spezielle Schrift im Koma-Script setzen.
@@ -82,12 +94,11 @@
 %
 \definecolor{LinkColor}{rgb}{0,0,0.5}
 \usepackage[%
-	pdftitle={Titel},% Titel der Diplomarbeit
+	pdftitle={LuxuryLust - Wordpress Theme und Android Applikation},% Titel der Diplomarbeit
 	pdfauthor={Autor},% Autor(en)
 	pdfcreator={LaTeX, LaTeX with hyperref and KOMA-Script},% Genutzte Programme
 	pdfsubject={Betreff}, % Betreff
 	pdfkeywords={Keywords}]{hyperref} % Keywords halt :-)
-	
 \hypersetup{colorlinks=true,% Definition der Links im PDF File
 	linkcolor=LinkColor,%
 	citecolor=LinkColor,%
@@ -97,7 +108,7 @@
 	urlcolor=LinkColor}
 
 %
-% Paket um LIstings sauber zu formatieren.
+% Paket um Listings sauber zu formatieren.
 %
 \usepackage[savemem]{listings}
 \lstloadlanguages{TeX}
@@ -193,8 +204,8 @@ keepaspectratio]{bilder/titelbild.png}%
 % Kapitelueberschriften werden in eine Zeile geschrieben.
 %
 % normal: 
-% Kapitel 1.
-% Einleitung
+%Kapitel 1.
+%Einleitung
 %
 % wenn hier auskommentiert:
 % Kapitel 1: Einleitung
